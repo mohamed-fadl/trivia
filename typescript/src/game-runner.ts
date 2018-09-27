@@ -1,26 +1,26 @@
-import { Game } from './game';
+import { Game } from './data-models/game/game';
 import { PlayersFactory } from './data-models/players.factory';
 import { Judge } from './data-models/game/judge';
 
 export class GameRunner {
     public static main(): void {
-        const game = new Game();
-        game.add("Chet");
-        game.add("Pat");
-        game.add("Sue");
+        // const game = new Game();
+        // game.add("Chet");
+        // game.add("Pat");
+        // game.add("Sue");
 
-        let notAWinner;
-        do {
+        // let notAWinner;
+        // do {
 
-            game.roll(Math.floor(Math.random() * 6) + 1);
-        
-            if (Math.floor(Math.random() * 10) == 7) {
-            notAWinner = game.wrongAnswer();
-            } else {
-            notAWinner = game.wasCorrectlyAnswered();
-            }
-        
-        } while (notAWinner);
+        //     game.roll(Math.floor(Math.random() * 6) + 1);
+
+        //     if (Math.floor(Math.random() * 10) == 7) {
+        //     notAWinner = game.wrongAnswer();
+        //     } else {
+        //     notAWinner = game.wasCorrectlyAnswered();
+        //     }
+
+        // } while (notAWinner);
 
         // the game runner starts by creating the players, the game, and the judge
         // the game runner then lets the judge manage the game and the players and decide
@@ -34,7 +34,7 @@ export class GameRunner {
         var theGame = new Game();
 
         // create the judge
-        var judge = new Judge();
+        var judge = new Judge(theGame, players);
 
         // time to play
         judge.startTheGame();
@@ -43,4 +43,3 @@ export class GameRunner {
 
 GameRunner.main();
 
-  
