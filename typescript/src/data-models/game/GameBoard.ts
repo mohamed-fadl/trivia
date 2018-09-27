@@ -11,42 +11,27 @@
 export class GameBoard {
 
     boardArray: Array<string>;
-    callsCount: Map<string,number> // save number of calls for each category
 
     constructor() {
         this.boardArray = new Array<string>();
-        this.callsCount = new Map<string,number>();
     }
 
     initalizeTheBoard() {
         this.boardArray = ['pop', 'science', 'sports', 'rock', 'pop', 'science', 'sports', 'rock', 'pop', 'science', 'sports', 'rock'];
-
-        this.callsCount.set('pop', 0);
-        this.callsCount.set('science', 0);
-        this.callsCount.set('rock', 0);
-        this.callsCount.set('sports', 0);
 
     }
 
     getCategory(index): string {
 
         var category = this.boardArray[index];
-        this.updateCategoryCalls(category);
 
         return category;
     }
 
-    private updateCategoryCalls(category) {
-        this.callsCount.set(category, this.callsCount.get(category) + 1);
-    }
-
-    getCategoryCalls(category): number {
-        return this.callsCount.get(category)
-    }
-
-    getPlayerNewPosition(index):numebr{
-        if(index <= this.boardArray.length)
-            return result;
-        return (index - this.boardArray.length);
+    getPlayerNewPosition(index): number {
+        if (index < this.boardArray.length)
+            return index;
+        else
+            return (index - this.boardArray.length);
     }
 }
