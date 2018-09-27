@@ -36,7 +36,7 @@ export class GameBoard {
         return category;
     }
 
-    updateCategoryCalls(category) {
+    private updateCategoryCalls(category) {
         //this.callsCount.set(category, this.callsCount.get(category) + 1);
     }
 

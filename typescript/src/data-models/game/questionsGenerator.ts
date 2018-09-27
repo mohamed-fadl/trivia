@@ -1,6 +1,6 @@
 // this module generates questions for the game players.
 
-import { GameBoard } from './GameBoard';
+import { GameBoard } from './gameBoard';
 
 export class QuestionsGenerator {
 

@@ -1,5 +1,10 @@
-export interface Player {
-    name: string;
-    coins: number;
-    isPenalized: boolean;
+export class Player {
+    public name: string;
+    public coins: number = 0;
+    public isPenalized: boolean = false;
+
+    constructor(name: string) {
+        this.name = name;
+
+    }
 }
