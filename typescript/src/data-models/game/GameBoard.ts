@@ -11,11 +11,11 @@
 export class GameBoard {
 
     boardArray: Array<string>;
-    callsCount: any // save number of calls for each category
+    callsCount: Map<string,number> // save number of calls for each category
 
     constructor() {
         this.boardArray = new Array<string>();
-        this.callsCount = new Map();
+        this.callsCount = new Map<string,number>();
     }
 
     initalizeTheBoard() {
@@ -37,10 +37,16 @@ export class GameBoard {
     }
 
     private updateCategoryCalls(category) {
-        //this.callsCount.set(category, this.callsCount.get(category) + 1);
+        this.callsCount.set(category, this.callsCount.get(category) + 1);
     }
 
     getCategoryCalls(category): number {
         return this.callsCount.get(category)
+    }
+
+    getPlayerNewPosition(index):numebr{
+        if(index <= this.boardArray.length)
+            return result;
+        return (index - this.boardArray.length);
     }
 }
