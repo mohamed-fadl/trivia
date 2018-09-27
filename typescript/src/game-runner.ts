@@ -1,4 +1,6 @@
-import {Game} from './game';
+import { Game } from './game';
+import { PlayersFactory } from './data-models/players.factory';
+import { Judge } from './data-models/game/judge';
 
 export class GameRunner {
     public static main(): void {
@@ -19,6 +21,23 @@ export class GameRunner {
             }
         
         } while (notAWinner);
+
+        // the game runner starts by creating the players, the game, and the judge
+        // the game runner then lets the judge manage the game and the players and decide
+        // on the game resutl.
+
+        // create list of players
+        var playersFactory = new PlayersFactory();
+        var players = playersFactory.createPlayers();
+
+        // create the game
+        var theGame = new Game();
+
+        // create the judge
+        var judge = new Judge();
+
+        // time to play
+        judge.startTheGame();
     }
 }
 
