@@ -4,26 +4,32 @@ import { GameBoard } from './gameBoard';
 
 export class QuestionsGenerator {
 
-    private gameBoard: GameBoard;
+    callsCount: Map<string, number>;
 
-    constructor(gameBoard) {
-        this.gameBoard = gameBoard;
+    constructor() {
+        this.callsCount = new Map<string, number>();
+
+        this.initialize();
     }
 
+    private initialize() {
+        this.callsCount.set('pop', 0);
+        this.callsCount.set('science', 0);
+        this.callsCount.set('rock', 0);
+        this.callsCount.set('sports', 0);
+    }
 
-    generateQuestion(playerPosition): string {
+    generateQuestion(questionCategory): string {
         var result: string;
 
-        // check the category from the GameBoard
-        var questionCategory = this.gameBoard.getCategory(playerPosition);
-        var categoryCalls = this.gameBoard.getCategoryCalls(questionCategory);
+        this.callsCount.set(questionCategory, this.callsCount.get(questionCategory) + 1);
 
 
-        result = this.formatQuestion(questionCategory, categoryCalls);
+        result = this.formatQuestion(questionCategory, this.callsCount.get(questionCategory));
         return result;
     }
 
-    formatQuestion(category, callsCount): string {
+    private formatQuestion(category, callsCount): string {
 
         return `${category} Question ${callsCount}`;
     }
