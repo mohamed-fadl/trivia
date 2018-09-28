@@ -1,13 +1,12 @@
 import { Game } from './data-models/game/game';
-import { PlayersFactory } from './data-models/players.factory';
-import { Judge } from './data-models/game/judge';
+import { Judge } from './data-models/judge';
+import { PlayersFactory } from './factories/players.factory';
 
 export class GameRunner {
     public static main(): void {
 
         // create list of players
-        var playersFactory = new PlayersFactory();
-        var players = playersFactory.createPlayers();
+        var players = PlayersFactory.createPlayers();
         
         // create the game
         var theGame = new Game();
