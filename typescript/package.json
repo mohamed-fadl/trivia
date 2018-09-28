@@ -5,7 +5,7 @@
   "main": "src/game-runner.ts",
   "scripts": {
     "start": "ts-node src/game-runner.ts",
-    "test": "nyc mocha --recursive --require ts-node/register \"tests/**/*.test.ts\""
+    "test": "nyc mocha --recursive --require ts-node/register \"src/**/*.test.ts\""
   },
   "nyc": {
     "include": [
@@ -32,6 +32,8 @@
     "typescript": "^2.9.2"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.5",
+    "@types/mocha": "^5.2.5",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
