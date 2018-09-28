@@ -22,10 +22,10 @@ export class QuestionsGenerator {
     generateQuestion(questionCategory): string {
         var result: string;
 
-        this.callsCount.set(questionCategory, this.callsCount.get(questionCategory) + 1);
-
-
         result = this.formatQuestion(questionCategory, this.callsCount.get(questionCategory));
+
+        this.callsCount.set(questionCategory, this.callsCount.get(questionCategory) + 1);
+        
         return result;
     }
 
