@@ -3,12 +3,15 @@ export class PlayersFactory{
 
     private static players:Player[];
 
-    public static createPlayers():Array<Player>{
+    public static createPlayers(names:Array<string>):Array<Player>{
         this.players = new Array<Player>();
 
-        this.players.push(new Player('Chet'));
-        this.players.push(new Player('Pat'));
-        this.players.push(new Player('Sue'));
+        if(names.length == 0)
+            throw new Error('no names provided'); 
+        
+        names.forEach(name => {
+            this.players.push(new Player(name));            
+        });
         
         return this.players;
     }

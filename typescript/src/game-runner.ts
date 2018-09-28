@@ -5,8 +5,9 @@ import { PlayersFactory } from './factories/players.factory';
 export class GameRunner {
     public static main(): void {
 
+        var playersNames = ['Chat','Pat','Sue'];
         // create list of players
-        var players = PlayersFactory.createPlayers();
+        var players = PlayersFactory.createPlayers(playersNames);
         
         // create the game
         var theGame = new Game();
