@@ -1,5 +1,6 @@
-import { Player } from './../player';
-import { Game } from './game'
+import { Player } from './player';
+import { Game } from './game/game';
+
 // this module to judge a game state if it's finished with a winner or not 
 
 export class Judge {
