@@ -8,14 +8,15 @@ export class Game {
     private questionGenerator: QuestionsGenerator;
 
     constructor() {
-        // the game creates its own board and question generator
-        this.questionGenerator = new QuestionsGenerator();
-
         this.initialize();
     }
 
     private initialize() {
+        // the game creates its own board and question generator
+        
         this.board = new GameBoard();
+        this.questionGenerator = new QuestionsGenerator();
+        
         this.board.initalizeTheBoard();
     }
 

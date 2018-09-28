@@ -4,6 +4,7 @@ import { GameBoard } from './gameBoard';
 
 export class QuestionsGenerator {
 
+    // to keep track of the category calls.
     callsCount: Map<string, number>;
 
     constructor() {
@@ -30,7 +31,6 @@ export class QuestionsGenerator {
     }
 
     private formatQuestion(category, callsCount): string {
-
         return `${category} Question ${callsCount}`;
     }
 }

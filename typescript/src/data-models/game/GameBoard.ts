@@ -17,15 +17,13 @@ export class GameBoard {
     }
 
     initalizeTheBoard() {
+        // for this current spicific game, the game board looks like one dimensional array of the categories.
         this.boardArray = ['pop', 'science', 'sports', 'rock', 'pop', 'science', 'sports', 'rock', 'pop', 'science', 'sports', 'rock'];
 
     }
 
     getCategory(index): string {
-
-        var category = this.boardArray[index];
-
-        return category;
+        return this.boardArray[index];
     }
 
     getPlayerNewPosition(index): number {

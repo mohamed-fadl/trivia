@@ -6,6 +6,8 @@ export class GameRunner {
     public static main(): void {
 
         var playersNames = ['Chat','Pat','Sue'];
+
+        
         // create list of players
         var players = PlayersFactory.createPlayers(playersNames);
         

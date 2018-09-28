@@ -20,12 +20,10 @@ export class Judge {
     }
 
     public startTheGame() {
-        // this function implements the logic of how the game is played
-
-        /*  
-        circulate between players, roll the dice for each of them to know which questions
-        category they should answer a question from. Ask the question and check if the answer
-        is correct and reward or penalize the players according to that 
+        /*
+            circulate between players, roll the dice for each of them to know which questions
+            category they should answer a question from. Ask the question and check if the answer
+            is correct and reward or penalize the players according to that.
         */
 
         var i = 0;
@@ -44,6 +42,9 @@ export class Judge {
                 this.play(rollResult);
             }
             
+            // check if the game ended after each round
+
+            //TODO: if the player is penalized and they aren't out of the penalty box, don't check for winner.
             if (this.checkForWinner()){
                 i = -1;
                 console.log(`\nThe game ends, and the WINNER is ${this.currentPlayer.name.toUpperCase()}\n` );                
@@ -61,7 +62,8 @@ export class Judge {
 
 
     private playForPenalizedPlayer(rollResult){
-
+        
+        // if a players is penalized, they should get out of the penalty box first before continuing playing
         
         if(rollResult %2 != 0){
             this.currentPlayer.isPenalized = false;
@@ -77,7 +79,7 @@ export class Judge {
 
         // move the player x positions on the game board
         this.currentPlayer.positionInTheGameBoard = this.game.movePlayerInTheBoard(this.currentPlayer.positionInTheGameBoard
-            + rollResult);
+                                                                                    + rollResult);
 
         console.log('their new position in the game is ', this.currentPlayer.positionInTheGameBoard);
 
